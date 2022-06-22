@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  margin: auto;
+  width: fit-content;
+}
+
+.taskInfos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.tasks {
+  display: flex;
+}
+
+.tasksText {
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.done {
+  display: flex;
+}
+
+.doneText {
+  font-weight: 700;
+  color: var(--purple);
+}
+
+.numbers {
+  background-color: var(--gray-400);
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+  margin-left: 0.5rem;
+}
