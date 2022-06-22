@@ -1,0 +1,25 @@
+.form {
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  color: var(--white);
+  width: 100%;
+}
+
+.form input {
+  border-radius: 8px;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  padding: 16px;
+  width: 39.875rem;
+  height: 3.375rem;
+}
+
+.form button {
+  margin-left: 0.5rem;
+  border: none;
+  border-radius: 8px;
+  width: 5.625rem;
+  height: 3.25rem;
+  background-color: var(--blue-dark);
+}
