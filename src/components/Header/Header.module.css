@@ -1,4 +1,7 @@
 .header {
-  background-color: #333;
+  background-color: var(--gray-700);
   color: aliceblue;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem 0;
 }

@@ -1,12 +1,12 @@
 import Header from "./components/Header/Header";
-import './global.css';
+import './global.css'
 
 function App() {
 
   return (
-    <header className="App">
+    <div className="App">
       <Header />
-    </header>
+    </div>
   )
 }
 
