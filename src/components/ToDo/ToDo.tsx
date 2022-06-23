@@ -1,6 +1,6 @@
 import styles from './ToDo.module.css';
 import trashIcon from '../../assets/trash-icon.svg';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 interface Task {
   taskDescription: string;

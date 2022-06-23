@@ -16,17 +16,24 @@ interface Task {
 
 function Form({ onSetTasks, tasks }: FormProps) {
   const [taskText, setTaskText] = useState('');
+  const [ isButtonDisabled, setIsButtonDisabled ] = useState(true);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
     const updatedtTasks: Task[] = [...tasks, { taskDescription: taskText, isTaskDone: false, id: uuid() }];
     onSetTasks(updatedtTasks);
     setTaskText('');
+    setIsButtonDisabled(true);
   }
 
   function handleChange (event: ChangeEvent<HTMLInputElement>) {
     event.target.setCustomValidity('');
     setTaskText(event.target.value);
+    if(event.target.value.length > 2) {
+      setIsButtonDisabled(false);
+    } else {
+      setIsButtonDisabled(true);
+    }
   }
 
   return (
@@ -39,7 +46,7 @@ function Form({ onSetTasks, tasks }: FormProps) {
         value={ taskText }
       />
       <div>
-        <button type="submit" onClick={ handleSubmit } >
+        <button type="submit" onClick={ handleSubmit } disabled={ isButtonDisabled } >
           Criar
           <img  src={ plusIcon } alt="plus icon" />
         </button>
