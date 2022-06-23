@@ -1,5 +1,6 @@
 import styles from './ToDo.module.css';
 import trashIcon from '../../assets/trash-icon.svg';
+import { ChangeEvent } from 'react';
 
 interface Task {
   taskDescription: string;
@@ -9,23 +10,33 @@ interface Task {
 
 interface toDoProps {
   task: Task;
-  // onHandleDeleteTask: (id: string) => void;
+  isTaskDone: (taskId: string, isChecked: boolean) => void;
+  deleteTask: (taskId: string) => void;
 }
 
-function ToDo({ task }: toDoProps) {
-  // function handleDeleteTask() {
-  //   onHandleDeleteTask(task.id);
-  // }
+function ToDo({ task, isTaskDone, deleteTask }: toDoProps) {
+  function handleDeleteTask() {
+    deleteTask(task.id);
+  }
+
+  function handleDoneTask(event: ChangeEvent<HTMLInputElement>) {
+    isTaskDone(event.target.id, event.target.checked);
+  }
 
   return (
-    <div className={ styles.ToDo } id={ task.id }>
-      <label htmlFor="check1" className={ styles.task }>
-        <input type="checkbox" id="check1" defaultChecked={ task.isTaskDone }/>
+    <div className={ styles.ToDo }>
+      <label htmlFor={ task.id } className={ styles.task }>
+        <input
+          type="checkbox"
+          id={ task.id }
+          defaultChecked={ task.isTaskDone }
+          onChange= { handleDoneTask }
+        />
         <p>{task.taskDescription}</p>
       </label>
       <button
         type='button'
-        // onChange={ handleDeleteTask }
+        onClick={ handleDeleteTask }
       >
         <img src={ trashIcon } />
       </button>
