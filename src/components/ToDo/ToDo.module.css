@@ -9,11 +9,17 @@
   padding: 1rem;
   margin: 1rem 0;
   width:fit-content;
+  transition: 0.1s ease-in-out;
 }
 
 .ToDo img {
-  margin-left: 2rem;
   width: 2rem;
+}
+
+.ToDo button {
+  background-color: var(--gray-500);
+  border: none;
+  cursor: pointer;
 }
 
 .task {
@@ -45,7 +51,7 @@ input[type="checkbox"]:hover {
 
 input[type="checkbox"]:after {
   content: url('../../assets/checked-icon.svg');
-  transform: translateY(-5%);
+  transform: translateY(-10%);
   cursor: pointer;
   display: none;
 }
