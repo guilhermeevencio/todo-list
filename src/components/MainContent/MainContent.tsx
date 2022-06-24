@@ -36,7 +36,7 @@ function MainContent() {
       <Form onSetTasks={ setTasks } tasks={ tasks }/>
         <div className={ styles.taskInfos }>
           <div className={ styles.tasks }>
-            <p className={ styles.tasksText } >Tarefas cridas</p>
+            <p className={ styles.tasksText } >Tarefas criadas</p>
             <p className={ styles.numbers } >{tasks.length}</p>
           </div>
           <div className={ styles.done }>
