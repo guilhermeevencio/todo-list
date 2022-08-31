@@ -1,4 +1,7 @@
-# ✅ToDo
+<h1 align="center">✅ToDo</h1>
+
+
+&nbsp;
 
 This application consists of a CRUD (Create, Read, Update and Delete), where you can add a task, mark it as done and then remove it.\
 It was developed using React.js + Typescript and css modules.
